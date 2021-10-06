@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Frontend Mentor | Tip calculator app</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">
+        <span>SPLI</span>
+        <span>TTER</span>
+      </div>
+
+      <div class="card">
+        <div class="row bill-setup">
+          <section>
+            <span>Bill</span>
+            <div class="input-group">
+              <img src="./images/icon-dollar.svg" />
+              <input type="number" id="bill-input" />
+            </div>
+          </section>
+          <section>
+            <span>Select tip %</span>
+            <div class="buttons-group" id="select-tip">
+              <button value="5">5%</button>
+              <button value="10">10%</button>
+              <button value="15">15%</button>
+              <button value="25">25%</button>
+              <button value="50">50%</button>
+              <input type="number" id="custom-tip-value" placeholder="Custom"></input>
+            </div>
+          </section>
+          <section class="people">
+            <span>Number of people<span>Can't be zero</span></span>
+            <div class="input-group">
+              <img src="./images/icon-person.svg" />
+              <input type="number" id="input-people-count" />
+            </div>
+          </section>
+        </div>
+        <div class="row bill-results">
+          <section>
+            <div class="row">
+              <div class="desc">
+                <span>Tip Amount</span>
+                <span>/ person</span>
+              </div>
+              <div class="amount"><span>$<span id="tip-value">0.00</span></span></div>
+            </div>
+            <div class="row">
+              <div class="desc">
+                <span>Total</span>
+                <span>/ person</span>
+              </div>
+              <div class="amount"><span>$<span id="total-value">0.00</span></span></div>
+            </div>
+              <button id="reset-button" disabled>RESET</button>
+          </section>
+        </div>
+      </div>
+      <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="https://github.com/lupuilie">Lupu Ilie</a>.
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

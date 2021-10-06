@@ -241,13 +241,14 @@ main {
 .todo-item .todo-check-btn:after {
   content: "";
   position: absolute;
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   background: var(--todo-bg);
   border-radius: 50%;
-  left: 1px;
-  top: 1px;
+  left: 0;
+  top: 0;
   z-index: 1;
+  transform: scale(0.9);
 }
 
 .todo-item .todo-check-btn:hover {

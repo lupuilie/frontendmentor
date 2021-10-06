@@ -1,0 +1,269 @@
+/* font-family: 'Space Mono', monospace; */
+:root {
+  /* Primary */
+  --strong-cyan: hsl(172, 67%, 45%);
+  --strong-cyan-hover: hsl(172, 67%, 55%);
+  /* Neutral */
+  --very-dark-cyan: hsl(183, 100%, 15%);
+  --very-dark-cyan2: hsl(183, 100%, 22%);
+  --dark-grayish-cyan: hsl(186, 14%, 43%);
+  --dark-grayish-cyan2: hsl(184, 14%, 56%);
+  --light-grayish-cyan: hsl(185, 41%, 84%);
+  --light-grayish-cyan2: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+  --error: rgb(202, 73, 73);
+  --font: "Space Mono", monospace;
+}
+
+/* Needed */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--light-grayish-cyan);
+  font-family: var(--font);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2em auto;
+}
+.title span {
+  font-weight: 700;
+  font-size: 1.3em;
+  letter-spacing: 0.5em;
+  color: var(--dark-grayish-cyan);
+}
+
+input:focus {
+  cursor: pointer;
+}
+button:hover {
+  cursor: pointer;
+}
+
+/* Main Card */
+.card {
+  background-color: var(--white);
+  padding: 2em;
+  border-radius: 1.5em;
+  width: 100%;
+}
+
+/* Bill Setup */
+.bill-setup section {
+  margin-top: 1.5em;
+}
+.bill-setup section:first-of-type {
+  margin-top: 0;
+}
+.bill-setup section > span {
+  font-weight: 700;
+  color: var(--dark-grayish-cyan2);
+}
+
+/* Input Group */
+.input-group {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-group img {
+  position: absolute;
+  margin-left: 1em;
+}
+.input-group input {
+  width: 100%;
+  border: 2px solid transparent;
+  outline: none;
+  background: var(--light-grayish-cyan2);
+  color: var(--very-dark-cyan);
+  font-size: 24px;
+  font-weight: 700;
+  text-align: right;
+  padding: 0.4em 1em 0.4em 1.5em;
+  border-radius: 5px;
+}
+.input-group input:focus {
+  border: 2px solid var(--strong-cyan-hover);
+}
+.input-group input.active {
+  border: 2px solid var(--strong-cyan-hover);
+}
+.input-group input.error {
+  border: 2px solid var(--error);
+}
+
+/* Bill-Setup: Select tip % */
+.buttons-group {
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: repeat(2, 1fr);
+}
+.buttons-group button {
+  background-color: var(--very-dark-cyan);
+  color: var(--white);
+  font-size: 24px;
+  border: none;
+  font-family: var(--font);
+  font-weight: 700;
+  border-radius: 5px;
+  width: 100%;
+}
+.buttons-group button.active {
+  background-color: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+}
+.buttons-group input {
+  width: 100%;
+  background-color: var(--light-grayish-cyan2);
+  color: var(--very-dark-cyan);
+  border: 2px solid transparent;
+  outline: none;
+  font-family: var(--font);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  border-radius: 5px;
+  text-align: right;
+  padding: 0 0.3em;
+}
+.buttons-group input::placeholder {
+  text-align: center;
+}
+.buttons-group input:focus {
+  border: 2px solid var(--strong-cyan-hover);
+}
+.buttons-group input.error {
+  border: 2px solid var(--error);
+}
+.buttons-group input.active {
+  border: 2px solid var(--strong-cyan-hover);
+}
+
+/* Bill-Setup: Number of people */
+.people > span {
+  display: flex;
+  justify-content: space-between;
+}
+.people > span > span {
+  opacity: 0;
+}
+.people > span .error {
+  color: var(--error);
+  opacity: 1;
+}
+
+/* Bill Results */
+.bill-results {
+  margin-top: 1.5em;
+  background-color: var(--very-dark-cyan);
+  color: var(--white);
+  padding: 1em;
+  font-weight: 700;
+  border-radius: 1em;
+  position: relative;
+}
+.bill-results section {
+  display: flex;
+  flex-direction: column;
+}
+.bill-results section .row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1em;
+  width: 100%;
+}
+
+/* Tip Amount / Total */
+.bill-results section .row .desc {
+  display: flex;
+  flex-direction: column;
+}
+.bill-results section .row .desc span:nth-of-type(2) {
+  font-size: 0.8em;
+  font-weight: 700;
+  color: var(--dark-grayish-cyan2);
+}
+
+/* Amount of & */
+.bill-results section .row .amount {
+  font-size: 2em;
+  color: var(--strong-cyan);
+}
+#reset-button {
+  font-weight: 700;
+  font-family: var(--font);
+  border: none;
+  outline: none;
+  background-color: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+  padding: 0.5em;
+  border-radius: 5px;
+  margin-top: 2em;
+}
+#reset-button:hover {
+  background-color: var(--strong-cyan-hover);
+}
+#reset-button:disabled {
+  background-color: var(--very-dark-cyan2);
+  color: var(--dark-grayish-cyan);
+  cursor: default;
+}
+
+.attribution {
+  margin: 1em 0;
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* Let's make it responsive */
+@media (min-width: 600px) {
+  .buttons-group {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 800px) {
+  .card {
+    width: 80vw;
+    display: flex;
+  }
+  .card .row {
+    width: 50%;
+  }
+  .bill-setup section {
+    margin-top: 2.5em;
+  }
+  .bill-results {
+    margin-left: 1em;
+    margin-top: 0;
+    padding: 1.5em;
+  }
+  #reset-button {
+    position: absolute;
+    bottom: 2.5em;
+    left: 3em;
+    width: calc(100% - 6em);
+  }
+}
+@media (min-width: 1440px) {
+  .card {
+    width: 50vw;
+  }
+}
