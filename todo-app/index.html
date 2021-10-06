@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>TODO</h1>
+      <div id="dark-mode-switch" class="color-scheme-switch">
+        <button></button>
+      </div>
+    </header>
+
+    <main>
+      <div class="todo-add">
+        <div class="circle"></div>
+        <form id="todo-form">
+          <input
+            type="text"
+            id="todo-input"
+            placeholder="Create a new todo..."
+            autocomplete="off"
+          />
+        </form>
+      </div>
+
+      <div class="todo-list">
+        <!-- <div class="todo-item checked" data-todo-id="abc">
+          <button class="todo-check-btn"></button>
+          <span class="text">Todo 1</span>
+          <button class="delete"></button>
+        </div> -->
+      </div>
+      <div class="todo-stats">
+        <span id="todo-left"></span>
+        <div class="filter">
+          <button data-filter="all">All</button>
+          <button data-filter="active">Active</button>
+          <button data-filter="completed">Completed</button>
+        </div>
+        <button id="todo-clear" class="hide">Clear Completed</button>
+      </div>
+      <div class="todo-filter">
+        <div class="filter">
+          <button data-filter="all">All</button>
+          <button data-filter="active">Active</button>
+          <button data-filter="completed">Completed</button>
+        </div>
+      </div>
+      <div class="info">
+        <span>Drag and drop to reorder</span>
+      </div>
+    </main>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >.<br />Coded by <a href="https://github.com/lupuilie">Lupu Ilie</a>.
+    </div>
+    <script type="module" src="./scripts/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,396 @@
+:root {
+  --ff: "Josefin Sans", sans-serif;
+
+  --bg-mobile-light: url("./images/bg-mobile-light.jpg");
+  --bg-mobile-dark: url("./images/bg-mobile-dark.jpg");
+  --bg-desktop-light: url("./images/bg-desktop-light.jpg");
+  --bg-desktop-dark: url("./images/bg-desktop-dark.jpg");
+
+  --icon-sun: url("./images/icon-sun.svg");
+  --icon-moon: url("./images/icon-moon.svg");
+
+  --btn-checked: linear-gradient(
+    to bottom right,
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+  );
+
+  --bright-blue: hsl(220, 98%, 61%);
+
+  /* Light Theme */
+  --light-gray-100: hsl(0, 0%, 98%);
+  --light-gray-200: hsl(236, 33%, 92%);
+  --light-gray-300: hsl(233, 11%, 84%);
+  --light-gray-400: hsl(236, 9%, 61%);
+  --light-gray-500: hsl(235, 19%, 35%);
+
+  /* Dark theme */
+  --dark-blue-100: hsl(234, 39%, 85%);
+  --dark-blue-200: hsl(236, 33%, 92%);
+  --dark-blue-300: hsl(234, 11%, 52%);
+  --dark-blue-400: hsl(233, 14%, 35%);
+  --dark-blue-500: hsl(237, 14%, 26%);
+  --dark-blue-600: hsl(235, 24%, 19%);
+  --dark-blue-700: hsl(235, 21%, 11%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  --color-switch: var(--icon-moon);
+  --bg-color: var(--light-gray-100);
+  --todo-bg: #fff;
+  --todo-shadow: 0 10px 25px rgba(199, 199, 199, 0.397);
+  --todo-primary: var(--light-gray-500);
+  --todo-secondary: var(--light-gray-400);
+  --todo-checked-color: var(--light-gray-300);
+  --todo-item-dragover: rgba(146, 146, 146, 0.1);
+
+  font-family: var(--ff);
+  background-image: var(--bg-image);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100%;
+  background-color: var(--bg-color);
+}
+
+body.light {
+  --color-switch: var(--icon-moon);
+  --bg-image: var(--bg-mobile-light);
+  --bg-color: var(--light-gray-100);
+  --todo-bg: #fff;
+  --todo-primary: var(--light-gray-500);
+  --todo-secondary: var(--light-gray-400);
+  --todo-checked-color: var(--light-gray-300);
+  --todo-item-dragover: rgba(146, 146, 146, 0.1);
+}
+body.dark {
+  --color-switch: var(--icon-sun);
+  --bg-image: var(--bg-mobile-dark);
+  --bg-color: var(--dark-blue-700);
+  --todo-bg: var(--dark-blue-600);
+  --todo-shadow: none;
+  --todo-primary: var(--dark-blue-200);
+  --todo-secondary: var(--dark-blue-400);
+  --todo-checked-color: var(--todo-secondary);
+  --todo-item-dragover: var(--dark-blue-500);
+}
+
+@media (min-width: 900px) {
+  body.dark {
+    --bg-image: var(--bg-desktop-dark);
+  }
+}
+@media (min-width: 900px) {
+  body.light {
+    --bg-image: var(--bg-desktop-light);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    --color-switch: var(--icon-sun);
+    --bg-image: var(--bg-mobile-dark);
+    --bg-color: var(--dark-blue-700);
+    --todo-bg: var(--dark-blue-600);
+    --todo-shadow: none;
+    --todo-primary: var(--dark-blue-200);
+    --todo-secondary: var(--dark-blue-400);
+    --todo-checked-color: var(--todo-secondary);
+    --todo-item-dragover: var(--dark-blue-500);
+  }
+  @media (min-width: 900px) {
+    body {
+      --bg-image: var(--bg-desktop-dark);
+    }
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    --color-switch: var(--icon-moon);
+    --bg-image: var(--bg-mobile-light);
+    --bg-color: var(--light-gray-100);
+    --todo-bg: #fff;
+    --todo-primary: var(--light-gray-500);
+    --todo-secondary: var(--light-gray-400);
+    --todo-checked-color: var(--light-gray-300);
+    --todo-item-dragover: rgba(146, 146, 146, 0.1);
+  }
+  @media (min-width: 900px) {
+    body {
+      --bg-image: var(--bg-desktop-light);
+    }
+  }
+}
+
+.hide {
+  opacity: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  width: calc(100vw - 3em);
+  margin: 3em auto 2em;
+}
+header h1 {
+  color: var(--light-gray-100);
+  letter-spacing: 10px;
+  font-weight: 700;
+}
+
+.color-scheme-switch button {
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 1.5em;
+  height: 1.5em;
+  background: var(--color-switch);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  transition: 0.3s ease-in-out;
+}
+.color-scheme-switch button:hover {
+  cursor: pointer;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: calc(100vw - 3em);
+}
+
+.todo-add {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: var(--todo-bg);
+  padding: 1em;
+  border-radius: 5px;
+}
+.todo-add .circle {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 1px solid var(--todo-secondary);
+}
+.todo-add input::placeholder {
+  color: var(--todo-secondary);
+}
+.todo-add form {
+  width: 100%;
+}
+.todo-add input {
+  outline: none;
+  border: none;
+  width: 100%;
+  color: var(--todo-primary);
+  font-family: var(--ff);
+  margin-left: 10px;
+  background: transparent;
+  font-size: 1em;
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1em;
+  box-shadow: var(--todo-shadow);
+  border-radius: 5px;
+  background: var(--todo-bg);
+}
+.todo-list li {
+  list-style-type: none;
+}
+.todo-list li:hover {
+  background: var(--todo-item-dragover);
+  cursor: pointer;
+}
+.todo-list li.dragover {
+  transition: 0.3s ease-in-out;
+  background: var(--todo-item-dragover);
+}
+
+.todo-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1em;
+  border-bottom: 1px solid var(--todo-checked-color);
+  transition: 0.3s ease-in-out;
+}
+
+/* Check button */
+.todo-item .todo-check-btn {
+  width: 20px;
+  height: 20px;
+  background: var(--todo-secondary);
+  position: relative;
+  border: none;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.todo-item .todo-check-btn:after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: var(--todo-bg);
+  border-radius: 50%;
+  left: 1px;
+  top: 1px;
+  z-index: 1;
+}
+
+.todo-item .todo-check-btn:hover {
+  background-image: var(--btn-checked);
+  cursor: pointer;
+}
+.todo-item.checked .todo-check-btn {
+  background-image: url("images/icon-check.svg"), var(--btn-checked);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%, 100%;
+}
+.todo-item.checked .todo-check-btn:after {
+  background: transparent;
+}
+
+.todo-item.checked .text {
+  color: var(--todo-checked-color);
+  text-decoration: line-through;
+}
+
+/* Todo Text */
+.todo-item .text {
+  font-weight: 400;
+  width: calc(100% - 35px);
+  padding-left: 10px;
+  font-family: var(--ff);
+  color: var(--todo-primary);
+}
+/* Todo Item Delete Button */
+.todo-item .delete {
+  width: 13px;
+  height: 13px;
+  background: url("./images/icon-cross.svg");
+  background-position: center;
+  background-size: 100%;
+  border: none;
+  opacity: 1;
+}
+.todo-item .delete:hover {
+  cursor: pointer;
+}
+.todo-item:hover .delete {
+  opacity: 1;
+}
+
+/* Todo Stats*/
+.todo-stats {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em 1.5em;
+  font-weight: 500;
+  color: var(--todo-secondary);
+  background: var(--todo-bg);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-size: 15px;
+  box-shadow: var(--todo-shadow);
+}
+.todo-stats .filter {
+  display: none;
+}
+.todo-stats button {
+  background: transparent;
+  font-family: var(--ff);
+  color: var(--todo-secondary);
+  border: none;
+}
+.todo-stats button:hover {
+  cursor: pointer;
+  color: var(--todo-primary);
+}
+
+.filter button {
+  background: transparent;
+  color: var(--todo-secondary);
+  border: none;
+  font-family: var(--ff);
+  font-weight: 700;
+  margin: 0 0.5em;
+}
+.filter button:hover {
+  color: var(--todo-primary);
+  cursor: pointer;
+}
+.filter button.active {
+  color: var(--bright-blue);
+}
+
+.todo-filter {
+  display: flex;
+  margin: 1em 0;
+  justify-content: center;
+  background: var(--todo-bg);
+  padding: 1em;
+  border-radius: 5px;
+  box-shadow: var(--todo-shadow);
+}
+
+/* Text from bottom of page */
+.info {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5em;
+  color: var(--todo-secondary);
+}
+
+@media (min-width: 900px) {
+  body {
+    font-size: 18px;
+  }
+  header {
+    width: 60vw;
+  }
+  main {
+    width: 60vw;
+  }
+  .todo-stats .filter {
+    display: block;
+  }
+  .todo-filter {
+    display: none;
+  }
+  .todo-item .delete {
+    opacity: 0;
+  }
+}
+
+@media (min-width: 1440px) {
+  header {
+    margin: 4em auto 2em;
+    width: 35vw;
+  }
+  main {
+    width: 35vw;
+  }
+}
+
+.attribution {
+  text-align: center;
+  color: var(--todo-secondary);
+  margin: 1em 2em;
+}
+.attribution a {
+  color: var(--bright-blue);
+}
