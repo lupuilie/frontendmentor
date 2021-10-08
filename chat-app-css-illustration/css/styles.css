@@ -9,13 +9,12 @@
 body {
   background: #f5f3f7;
   font-family: "Rubik", sans-serif;
-  min-height: 100vh;
 }
 
 .rounded-purple-left {
   position: fixed;
-  width: 50%;
-  height: 60%;
+  width: 50vw;
+  height: 60vh;
   top: 0;
   background: linear-gradient(20deg, #8838ff 30%, #e942ff 100%);
   border-bottom-right-radius: 100%;
@@ -24,15 +23,15 @@ body {
 
 @media (min-width: 700px) {
   .rounded-purple-left {
-    width: 45%;
-    height: 70%;
+    width: 45vw;
+    height: 70vh;
   }
 }
 
 @media (min-width: 1000px) {
   .rounded-purple-left {
-    width: 50%;
-    height: 80%;
+    width: 50vw;
+    height: 80vh;
     border-bottom-right-radius: 100%;
     border-bottom-left-radius: 100%;
     -webkit-transform: translateX(-25%);
@@ -42,15 +41,15 @@ body {
 
 @media (min-width: 1350px) {
   .rounded-purple-left {
-    width: 37%;
-    height: 80%;
+    width: 37vw;
+    height: 80vh;
   }
 }
 
 .rounded-pink-right {
   position: fixed;
-  width: 50%;
-  height: 55%;
+  width: 50vw;
+  height: 55vh;
   bottom: 0;
   right: 0;
   background: #f1ecf8;
@@ -60,15 +59,15 @@ body {
 
 @media (min-width: 700px) {
   .rounded-pink-right {
-    width: 45%;
-    height: 70%;
+    width: 45vw;
+    height: 70vh;
   }
 }
 
 @media (min-width: 1000px) {
   .rounded-pink-right {
-    width: 50%;
-    height: 80%;
+    width: 50vw;
+    height: 80vh;
     border-top-right-radius: 100%;
     border-top-left-radius: 100%;
     -webkit-transform: translateX(25%);
@@ -78,8 +77,8 @@ body {
 
 @media (min-width: 1350px) {
   .rounded-pink-right {
-    width: 37%;
-    height: 80%;
+    width: 37vw;
+    height: 80vh;
   }
 }
 
@@ -97,10 +96,22 @@ body {
   margin: 3.5em 3em;
 }
 
+@media (min-width: 800px) {
+  .container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
 .phone-container {
   z-index: 1;
-  width: 17em;
-  height: 33.5em;
+  width: 18em;
+  height: 35em;
   padding: 0.5em;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -238,7 +249,7 @@ body {
           align-items: center;
   margin: 0 0.5em;
   border-radius: 1em;
-  padding: 0.3em;
+  padding: 0.4em;
 }
 
 .phone-container .phone .app-drawer .user-input .form input {
@@ -306,6 +317,13 @@ body {
           flex-direction: column;
   font-size: 0.6em;
   margin: 0 1em;
+  overflow: scroll;
+  max-height: 435px;
+}
+
+.phone-container .phone .app-drawer .messages::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
 }
 
 .phone-container .phone .app-drawer .messages .received {
@@ -326,7 +344,52 @@ body {
 }
 
 .phone-container .phone .app-drawer .messages .received .gradient {
-  background: red;
+  background-image: -webkit-gradient(linear, left top, right top, from(#e942ff), to(#8838ff));
+  background-image: linear-gradient(to right, #e942ff, #8838ff);
+}
+
+.phone-container .phone .app-drawer .messages .received .gradient .text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: white;
+}
+
+.phone-container .phone .app-drawer .messages .received .gradient .text span {
+  color: white;
+}
+
+.phone-container .phone .app-drawer .messages .received .gradient .text .price {
+  font-size: 1.5em;
+  font-weight: 700;
+  margin-right: 0.5em;
+}
+
+.phone-container .phone .app-drawer .messages .received .gradient .text .layout-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.phone-container .phone .app-drawer .messages .received .gradient .text .layout-left .radio {
+  width: 1.5em;
+  height: 1.5em;
+  border: 1px solid #e570ff;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.phone-container .phone .app-drawer .messages .received .gradient .text .layout-left .text {
+  margin-left: 1em;
 }
 
 .phone-container .phone .app-drawer .messages .sent {
@@ -369,8 +432,25 @@ body {
 }
 
 .heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   text-align: center;
   margin-top: 3em;
+}
+
+@media (min-width: 800px) {
+  .heading {
+    width: 25em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    text-align: left;
+  }
 }
 
 .heading h1 {

@@ -15,57 +15,56 @@ $light-bg: hsl(270, 20%, 96%);
 body {
   background: $light-bg;
   font-family: "Rubik", sans-serif;
-  min-height: 100vh;
 }
 
 .rounded-purple-left {
   position: fixed;
-  width: 50%;
-  height: 60%;
+  width: 50vw;
+  height: 60vh;
   top: 0;
   background: linear-gradient(20deg, $violet 30%, $magenta 100%);
   border-bottom-right-radius: 100%;
   z-index: -1;
   @media (min-width: 700px) {
-    width: 45%;
-    height: 70%;
+    width: 45vw;
+    height: 70vh;
   }
   @media (min-width: 1000px) {
-    width: 50%;
-    height: 80%;
+    width: 50vw;
+    height: 80vh;
     border-bottom-right-radius: 100%;
     border-bottom-left-radius: 100%;
     transform: translateX(-25%);
   }
   @media (min-width: 1350px) {
-    width: 37%;
-    height: 80%;
+    width: 37vw;
+    height: 80vh;
   }
 }
 
 .rounded-pink-right {
   position: fixed;
-  width: 50%;
-  height: 55%;
+  width: 50vw;
+  height: 55vh;
   bottom: 0;
   right: 0;
   background: hsl(264, 46%, 95%);
   border-top-left-radius: 100%;
   z-index: -1;
   @media (min-width: 700px) {
-    width: 45%;
-    height: 70%;
+    width: 45vw;
+    height: 70vh;
   }
   @media (min-width: 1000px) {
-    width: 50%;
-    height: 80%;
+    width: 50vw;
+    height: 80vh;
     border-top-right-radius: 100%;
     border-top-left-radius: 100%;
     transform: translateX(25%);
   }
   @media (min-width: 1350px) {
-    width: 37%;
-    height: 80%;
+    width: 37vw;
+    height: 80vh;
   }
 }
 
@@ -74,12 +73,16 @@ body {
   flex-direction: column;
   align-items: center;
   margin: 3.5em 3em;
+  @media (min-width: 800px) {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
 }
 
 .phone-container {
   z-index: 1;
-  width: 17em;
-  height: 33.5em;
+  width: 18em;
+  height: 35em;
   padding: 0.5em;
   display: flex;
   background: #fff;
@@ -167,7 +170,7 @@ body {
           align-items: center;
           margin: 0 0.5em;
           border-radius: 1em;
-          padding: 0.3em;
+          padding: 0.4em;
           input {
             border: none;
             outline: none;
@@ -211,6 +214,12 @@ body {
         flex-direction: column;
         font-size: 0.6em;
         margin: 0 1em;
+        overflow: scroll;
+        &::-webkit-scrollbar {
+          width: 0;
+          background: transparent;
+        }
+        max-height: 435px;
         .received {
           margin-top: 1em;
           margin-right: 7em;
@@ -224,9 +233,36 @@ body {
               font-weight: 400;
             }
           }
-          // TODO: Gradient and message styling
           .gradient {
-            background: red;
+            background-image: linear-gradient(to right, $magenta, $violet);
+            .text {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              color: $white;
+              span {
+                color: $white;
+              }
+              .price {
+                font-size: 1.5em;
+                font-weight: 700;
+                margin-right: 0.5em;
+              }
+              .layout-left {
+                display: flex;
+                align-items: center;
+                .radio {
+                  width: 1.5em;
+                  height: 1.5em;
+                  border: 1px solid hsl(289, 100%, 72%);
+                  border-radius: 50%;
+                  display: inline-block;
+                }
+                .text {
+                  margin-left: 1em;
+                }
+              }
+            }
           }
         }
 
@@ -264,8 +300,15 @@ body {
 }
 
 .heading {
+  display: flex;
+  flex-direction: column;
   text-align: center;
   margin-top: 3em;
+  @media (min-width: 800px) {
+    width: 25em;
+    display: flex;
+    text-align: left;
+  }
   h1 {
     font-size: 2em;
     font-weight: 500;

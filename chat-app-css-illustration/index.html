@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,minimum-scale=1"
+    />
     <!-- displays site properly based on user's device -->
 
     <link
@@ -47,7 +50,7 @@
             </div>
           </div>
           <div class="app-drawer">
-            <div class="messages">
+            <div class="messages" id="messages">
               <div class="received">
                 <div class="message">
                   <span>That sounds great. I’d be happy with that.</span>
@@ -88,20 +91,37 @@
               </div>
               <div class="received">
                 <div class="message gradient">
-                  <span>30 minute walk $29</span>
+                  <div class="text">
+                    <div class="layout-left">
+                      <span class="radio"></span>
+                      <span class="text">30 minute walk</span>
+                    </div>
+                    <div><span class="price">$29</span></div>
+                  </div>
                 </div>
               </div>
               <div class="received">
                 <div class="message gradient">
-                  <span>1 hour walk $49</span>
+                  <div class="text">
+                    <div class="layout-left">
+                      <span class="radio"></span>
+                      <span class="text">1 hour walk</span>
+                    </div>
+                    <div><span class="price">$49</span></div>
+                  </div>
                 </div>
               </div>
             </div>
             <div class="user-input">
-              <div class="form">
-                <input type="text" placeholder="Type a message..." />
-                <button><div class="arrow"></div></button>
-              </div>
+              <form class="form" id="form">
+                <input
+                  type="text"
+                  placeholder="Type a message..."
+                  id="message-input"
+                  autocomplete="off"
+                />
+                <button type="submit"><div class="arrow"></div></button>
+              </form>
             </div>
           </div>
         </div>
@@ -116,5 +136,34 @@
         </h4>
       </div>
     </div>
+    <script>
+      const messages = document.querySelector("#messages");
+      const input = document.querySelector("#message-input");
+      const form = document.querySelector("#form");
+      let inputValue = "";
+
+      input.addEventListener("change", (e) => (inputValue = e.target.value));
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        if (inputValue.length === 0) return;
+
+        const sent = document.createElement("div");
+        const message = document.createElement("div");
+        const span = document.createElement("span");
+
+        sent.classList.add("sent");
+        message.classList.add("message");
+
+        span.appendChild(document.createTextNode(inputValue));
+        message.appendChild(span);
+        sent.appendChild(message);
+
+        messages.appendChild(sent);
+        messages.scrollTop = messages.scrollHeight;
+        input.value = "";
+      });
+    </script>
   </body>
 </html>
