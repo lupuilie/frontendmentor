@@ -1,0 +1,38 @@
+.swiper {
+  width: 100%;
+  position: relative;
+  z-index: 0;
+  @media (min-width: 700px) {
+    width: 45%;
+  }
+}
+
+.swiper-btn-prev,
+.swiper-btn-next {
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+  background: white;
+  width: 3em;
+  height: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.swiper-btn-prev {
+  left: 1em;
+}
+.swiper-btn-next {
+  right: 1em;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}

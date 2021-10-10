@@ -1,0 +1,14 @@
+@import "swiper";
+@import "product-info";
+
+main {
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 700px) {
+    flex-direction: row;
+    align-items: center;
+    margin: 0 auto;
+    justify-content: space-between;
+    width: 70vw;
+  }
+}
