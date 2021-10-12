@@ -4,11 +4,45 @@
 main {
   display: flex;
   flex-direction: column;
+
   @media (min-width: 700px) {
     flex-direction: row;
-    align-items: center;
-    margin: 0 auto;
-    justify-content: space-between;
-    width: 70vw;
+    justify-content: center;
+    .swiper-container,
+    .product-info {
+      width: 50vw;
+    }
+    .swiper-container {
+      padding: 1em;
+    }
+    .product-info {
+      padding: 1em 2em;
+    }
+    .swiper-container .thumbs-slider {
+      display: block;
+    }
+  }
+  @media (min-width: 1000px) {
+    .swiper-container,
+    .product-info {
+      width: 40vw;
+    }
+  }
+  @media (min-width: 1300px) {
+    .swiper-container,
+    .product-info {
+      width: 35vw;
+    }
+    .swiper-container {
+      padding: 2em;
+    }
+    .product-info {
+      padding: 1em 3em;
+    }
+  }
+  @media (min-width: 1600px) {
+    .swiper-container {
+      padding: 4em;
+    }
   }
 }

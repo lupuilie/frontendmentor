@@ -30,17 +30,27 @@
             <img src="images/icon-menu.svg" alt="Toggle mobile menu" />
           </a>
           <a href="#" class="logo">sneakers</a>
+          <nav>
+            <a href="#">Collections</a>
+            <a href="#">Men</a>
+            <a href="#">Women</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+          </nav>
         </div>
         <div class="header-right">
           <div class="cart-dropdown">
             <a href="#" class="cart-dropdown-btn" id="cart-dropdown-toggle"
-              ><img src="./images/icon-cart.svg" alt="Cart Dropdown Toggle"
-            /><span>0</span></a>
+              ><img
+                src="./images/icon-cart.svg"
+                alt="Cart Dropdown Toggle"
+              /><span>0</span></a
+            >
             <div class="cart" id="header-cart-wrapper" data-visible="0">
               <h3 class="heading">Cart</h3>
               <div class="cart-content">
                 <h3 class="cart-empty">Your cart is empty.</h3>
-                <!-- <div class="list-item">
+                <div class="list-item">
                   <div class="item">
                     <img
                       src="./images/image-product-1-thumbnail.jpg"
@@ -59,12 +69,13 @@
                   </button>
                 </div>
               </div>
-              <button class="checkout">Checkout</button> -->
+              <!-- <button class="checkout">Checkout</button> -->
+              </div>
             </div>
+            <a href="#" class="user-avatar"
+              ><img src="./images/image-avatar.png" alt="User Avatar"
+            /></a>
           </div>
-          <a href="#" class="user-avatar"
-            ><img src="./images/image-avatar.png" alt="User Avatar"
-          /></a>
         </div>
       </div>
     </header>
@@ -83,67 +94,75 @@
         </ul>
       </div>
     </div>
-    <main>
-      <!-- Slider main container -->
-      <div class="swiper">
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
-          <!-- Slides -->
-          <div class="swiper-slide">
-            <!-- Required swiper-lazy class and image source specified in data-src attribute -->
-            <img data-src="./images/image-product-1.jpg" class="swiper-lazy" />
-            <!-- Preloader image -->
-            <div class="swiper-lazy-preloader"></div>
-          </div>
-          <div class="swiper-slide">
-            <!-- Required swiper-lazy class and image source specified in data-src attribute -->
-            <img data-src="./images/image-product-2.jpg" class="swiper-lazy" />
-            <!-- Preloader image -->
-            <div class="swiper-lazy-preloader"></div>
-          </div>
-          <div class="swiper-slide">
-            <!-- Required swiper-lazy class and image source specified in data-src attribute -->
-            <img data-src="./images/image-product-3.jpg" class="swiper-lazy" />
-            <!-- Preloader image -->
-            <div class="swiper-lazy-preloader"></div>
-          </div>
-        </div>
 
-        <!-- If we need navigation buttons -->
-        <div class="swiper-btn-prev">
-          <img src="/images/icon-previous.svg" />
+    <main>
+      <div class="swiper-container">
+        <div class="swiper main-slider">
+          <div class="swiper-wrapper">
+            <!-- <div class="swiper-slide">
+              <img src="./images/image-product-1.jpg" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/image-product-2.jpg" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/image-product-3.jpg" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/image-product-4.jpg" />
+            </div> -->
+          </div>
+          <div class="swiper-btn-next">
+            <img src="/images/icon-next.svg" />
+          </div>
+          <div class="swiper-btn-prev">
+            <img src="/images/icon-previous.svg" />
+          </div>
         </div>
-        <div class="swiper-btn-next">
-          <img src="/images/icon-next.svg" />
+        <div thumbsSlider="" class="swiper thumbs-slider">
+          <div class="swiper-wrapper">
+            <!-- <div class="swiper-slide">
+              <img src="./images/image-product-1-thumbnail.jpg" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/image-product-2-thumbnail.jpg" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/image-product-3-thumbnail.jpg" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/image-product-4-thumbnail.jpg" />
+            </div> -->
+          </div>
         </div>
       </div>
 
-
-        <div class="product-info">
-          <h4>SNEAKER COMPANY</h4>
-          <h1>Fall Limited Edition Sneakers</h1>
-          <p>
-            These low-profile sneakers are your perfect casual wear companion.
-            Featuring a durable rubber outer sole, they’ll withstand everything
-            the weather can offer.
-          </p>
-          <div class="price-info">
-            <div class="current-price">
-              <span class="price">$125.00</span>
-              <span class="discount">50%</span>
-            </div>
-            <div class="old-price">$250.00</div>
+      <div class="product-info">
+        <h4>SNEAKER COMPANY</h4>
+        <h1>Fall Limited Edition Sneakers</h1>
+        <p>
+          These low-profile sneakers are your perfect casual wear companion.
+          Featuring a durable rubber outer sole, they’ll withstand everything
+          the weather can offer.
+        </p>
+        <div class="price-info">
+          <div class="current-price">
+            <span class="price" id="current-price">$125.00</span>
+            <span class="discount" id="discount">50%</span>
           </div>
+          <div class="old-price" id="old-price">$250.00</div>
+        </div>
+        <div class="order-product">
           <div class="order-qty">
             <button id="order-qty-minus">
               <img src="/images/icon-minus.svg" />
             </button>
-            <input type="text" value="0" id="order-qty-value" />
+            <input type="text" value="1" id="order-qty-value" />
             <button id="order-qty-plus">
               <img src="/images/icon-plus.svg" />
             </button>
           </div>
-          <button class="add-to-cart">
+          <button class="add-to-cart" id="add-to-cart">
             <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
               <path
                 class="cart"
@@ -154,7 +173,7 @@
             <span>Add to cart</span>
           </button>
         </div>
-
+      </div>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
     <script type="module" src="js/script.js"></script>
