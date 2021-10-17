@@ -51,7 +51,13 @@ header {
       .user-avatar {
         margin-left: 1.5em;
         img {
-          width: 1.6em;
+          width: 2em;
+          border-radius: 50%;
+          border: 2px solid transparent;
+          transition: 0.2s ease;
+          &:hover {
+            border: 2px solid $orange;
+          }
         }
       }
       // Cart Button from header
@@ -97,12 +103,12 @@ header {
           }
           @media (min-width: 1000px) {
             left: inherit;
-            width: 35em;
+            width: 30em;
             transform: translateX(-80%);
           }
           @media (min-width: 1400px) {
             left: inherit;
-            width: 30em;
+            width: 25em;
             transform: translateX(-50%);
           }
           .heading {

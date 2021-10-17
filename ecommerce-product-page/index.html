@@ -44,7 +44,7 @@
               ><img
                 src="./images/icon-cart.svg"
                 alt="Cart Dropdown Toggle"
-              /><span>0</span></a
+              /><span id="cart-qty-tooltip">0</span></a
             >
             <div class="cart" id="header-cart-wrapper" data-visible="0">
               <h3 class="heading">Cart</h3>
@@ -70,12 +70,11 @@
                 </div> -->
               </div>
               <button class="checkout">Checkout</button>
-              </div>
             </div>
-            <a href="#" class="user-avatar"
-              ><img src="./images/image-avatar.png" alt="User Avatar"
-            /></a>
           </div>
+          <a href="#" class="user-avatar"
+            ><img src="./images/image-avatar.png" alt="User Avatar"
+          /></a>
         </div>
       </div>
     </header>
@@ -97,9 +96,9 @@
 
     <main>
       <div class="swiper-container">
-        <div class="swiper main-slider">
+        <div class="swiper main-slider" id="main-slider">
           <div class="swiper-wrapper">
-            <!-- <div class="swiper-slide">
+            <div class="swiper-slide">
               <img src="./images/image-product-1.jpg" />
             </div>
             <div class="swiper-slide">
@@ -110,18 +109,22 @@
             </div>
             <div class="swiper-slide">
               <img src="./images/image-product-4.jpg" />
-            </div> -->
-          </div>
-          <div class="swiper-btn-next">
-            <img src="./images/icon-next.svg" />
-          </div>
-          <div class="swiper-btn-prev">
-            <img src="./images/icon-previous.svg" />
+            </div>
           </div>
         </div>
-        <div thumbsSlider="" class="swiper thumbs-slider">
+        <div class="swiper-btn-next" id="main-slider-next">
+          <img src="./images/icon-next.svg" />
+        </div>
+        <div class="swiper-btn-prev" id="main-slider-prev">
+          <img src="./images/icon-previous.svg" />
+        </div>
+        <div
+          thumbsSlider=""
+          class="swiper thumbs-slider"
+          id="main-thumbs-slider"
+        >
           <div class="swiper-wrapper">
-            <!-- <div class="swiper-slide">
+            <div class="swiper-slide">
               <img src="./images/image-product-1-thumbnail.jpg" />
             </div>
             <div class="swiper-slide">
@@ -132,7 +135,7 @@
             </div>
             <div class="swiper-slide">
               <img src="./images/image-product-4-thumbnail.jpg" />
-            </div> -->
+            </div>
           </div>
         </div>
       </div>
@@ -175,6 +178,57 @@
         </div>
       </div>
     </main>
+    <div class="lightbox" id="lightbox">
+      <div class="swiper-container">
+        <div class="swiper main-slider" id="lightbox-main-slider">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="./images/image-product-1.jpg" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/image-product-2.jpg" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/image-product-3.jpg" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/image-product-4.jpg" />
+            </div>
+          </div>
+
+          <div class="swiper-btn-next" id="lightbox-next">
+            <img src="./images/icon-next.svg" />
+          </div>
+          <div class="swiper-btn-prev" id="lightbox-prev">
+            <img src="./images/icon-previous.svg" />
+          </div>
+        </div>
+        <button id="lightbox-close-btn" title="Close Lightbox">
+          <img src="./images/icon-close.svg" alt="lightbox-close" />
+        </button>
+
+        <div
+          thumbsSlider=""
+          class="swiper thumbs-slider"
+          id="lightbox-thumbs-slider"
+        >
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="./images/image-product-1-thumbnail.jpg" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/image-product-2-thumbnail.jpg" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/image-product-3-thumbnail.jpg" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/image-product-4-thumbnail.jpg" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
     <script type="module" src="js/script.js"></script>
   </body>
