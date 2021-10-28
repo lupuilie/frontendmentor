@@ -1,0 +1,94 @@
+body > header {
+  min-height: 650px;
+  background-image: url("../images/mobile/image-hero.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  @media (min-width: $breakpoint-lg) {
+    background-image: url("../images/desktop/image-hero.jpg");
+  }
+
+  .wrapper {
+    padding: 2em 1.5em;
+    @media (min-width: $breakpoint-lg) {
+      padding: 3em 7em;
+    }
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .navbar-right {
+        #open-mobile-menu {
+          @media (min-width: $breakpoint-lg) {
+            display: none;
+          }
+        }
+        .nav-desktop {
+          display: none;
+          ul {
+            display: flex;
+            list-style-type: none;
+            li {
+              a {
+                color: $white;
+                text-decoration: none;
+                padding: 0.5em 1em;
+                position: relative;
+
+                &::after {
+                  content: "";
+                  position: absolute;
+                  width: 1.5em;
+                  height: 2px;
+                  background: $white;
+                  bottom: 0.5em;
+                  left: 50%;
+                  transform: translateX(-50%);
+                  opacity: 0;
+                  transition: all 0.3s ease;
+                }
+              }
+              a:hover:after {
+                content: "";
+                opacity: 1;
+                bottom: 0;
+              }
+            }
+          }
+          @media (min-width: $breakpoint-lg) {
+            display: flex;
+          }
+        }
+      }
+    }
+    /* Hero */
+    .hero {
+      border: 1px solid $white;
+      padding: 2em;
+      margin-top: 7em;
+      @media (min-width: $breakpoint-sm) {
+        width: min-content;
+        span {
+          white-space: nowrap;
+        }
+      }
+
+      h1 {
+        color: $white;
+        text-transform: uppercase;
+        font-weight: 300;
+        font-size: 2.5em;
+        @media (min-width: $breakpoint-sm) {
+          font-size: 3em;
+        }
+        @media (min-width: $breakpoint-lg) {
+          font-size: 4em;
+        }
+        @media (min-width: $breakpoint-xl) {
+          font-size: 5em;
+        }
+      }
+    }
+  }
+}

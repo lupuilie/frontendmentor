@@ -1,0 +1,55 @@
+#interactive {
+  article {
+    margin: 4em 3em;
+    @media (min-width: $breakpoint-lg) {
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      margin: 7em;
+    }
+
+    .image {
+      img {
+        width: 100%;
+      }
+      @media (min-width: $breakpoint-lg) {
+        width: 50%;
+        max-width: 800px;
+      }
+    }
+    .text-wrapper {
+      text-align: center;
+      padding: 1.5em 1em 3em;
+      @media (min-width: $breakpoint-lg) {
+        width: 50%;
+        position: absolute;
+        right: 5%;
+        bottom: 0;
+        background-color: $white;
+        text-align: left;
+        padding: 3em 3em 0;
+      }
+      @media (min-width: $breakpoint-xl) {
+        padding: 4em 4em 0;
+        right: 10%;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        font-size: 2em;
+        color: $black;
+        font-weight: 300;
+
+        @media (min-width: $breakpoint-xl) {
+          font-size: 2.5em;
+        }
+      }
+      p {
+        font-family: "Alata", sans-serif;
+        color: $gray;
+        font-size: 0.9em;
+        padding-top: 2em;
+      }
+    }
+  }
+}

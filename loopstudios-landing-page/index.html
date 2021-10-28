@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend Mentor | Loopstudios landing page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <div class="wrapper">
+        <div class="navbar">
+          <div class="navbar-left">
+            <a href="#"><img src="./images/logo.svg" alt="Navbar-logo" /></a>
+          </div>
+          <div class="navbar-right">
+            <nav class="nav-desktop">
+              <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Support</a></li>
+              </ul>
+            </nav>
+            <a href="#" id="open-mobile-menu"
+              ><img src="./images/icon-hamburger.svg" alt="Open mobile menu"
+            /></a>
+          </div>
+        </div>
+        <div class="hero">
+          <h1>Immersive experiences <span>that deliver</span></h1>
+        </div>
+      </div>
+    </header>
+    <!-- ASIDE - MOBILE NAVIGATION MENU -->
+    <aside id="mobile-menu">
+      <header>
+        <img src="./images/logo.svg" alt="Mobile Menu Logo" />
+        <a href="#" id="mobile-menu-close"
+          ><img src="./images/icon-close.svg" alt="Mobile Menu Close Icon"
+        /></a>
+      </header>
+
+      <nav>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Events</a></li>
+          <li><a href="#">Products</a></li>
+          <li><a href="#">Support</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <!-- MAIN -->
+    <main>
+      <!-- INTERACTIVE -->
+      <section id="interactive">
+        <article>
+          <div class="image">
+            <picture>
+              <source
+                srcset="./images/desktop/image-interactive.jpg"
+                media="(min-width: 992px)"
+              />
+              <img
+                src="./images/mobile/image-interactive.jpg"
+                alt="Baby Sleeping"
+              />
+            </picture>
+          </div>
+          <div class="text-wrapper">
+            <h1><span>The leader in </span><span>interactive VR</span></h1>
+            <p>
+              Founded in 2011, Loopstudios has been producing world-class
+              virtual reality projects for some of the best companies around the
+              globe. Our award-winning creations have transformed businesses
+              through digital experiences that bind to their brand.
+            </p>
+          </div>
+        </article>
+      </section>
+      <!-- CREATIONS -->
+      <section id="creations">
+        <header>
+          <h1>OUR CREATIONS</h1>
+          <a href="#">SEE ALL</a>
+        </header>
+        <footer>
+          <a href="#">SEE ALL</a>
+        </footer>
+      </section>
+    </main>
+    <footer></footer>
+    <script src="script.js"></script>
+  </body>
+</html>

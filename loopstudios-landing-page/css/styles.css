@@ -1,0 +1,317 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+/* COLORS */
+/*  BREAKPOINTS */
+/* https://www.w3schools.com/howto/howto_css_media_query_breakpoints.asp */
+/* Extra small devices (phones, 600px and down) */
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/* Medium devices (landscape tablets, 768px and up) */
+/* Large devices (laptops/desktops, 992px and up) */
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+body > header {
+  min-height: 650px;
+  background-image: url("../images/mobile/image-hero.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+@media (min-width: 992px) {
+  body > header {
+    background-image: url("../images/desktop/image-hero.jpg");
+  }
+}
+
+body > header .wrapper {
+  padding: 2em 1.5em;
+  /* Navbar */
+  /* Hero */
+}
+
+@media (min-width: 992px) {
+  body > header .wrapper {
+    padding: 3em 7em;
+  }
+}
+
+body > header .wrapper .navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (min-width: 992px) {
+  body > header .wrapper .navbar .navbar-right #open-mobile-menu {
+    display: none;
+  }
+}
+
+body > header .wrapper .navbar .navbar-right .nav-desktop {
+  display: none;
+}
+
+body > header .wrapper .navbar .navbar-right .nav-desktop ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+}
+
+body > header .wrapper .navbar .navbar-right .nav-desktop ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  position: relative;
+}
+
+body > header .wrapper .navbar .navbar-right .nav-desktop ul li a::after {
+  content: "";
+  position: absolute;
+  width: 1.5em;
+  height: 2px;
+  background: white;
+  bottom: 0.5em;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  opacity: 0;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+body > header .wrapper .navbar .navbar-right .nav-desktop ul li a:hover:after {
+  content: "";
+  opacity: 1;
+  bottom: 0;
+}
+
+@media (min-width: 992px) {
+  body > header .wrapper .navbar .navbar-right .nav-desktop {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+body > header .wrapper .hero {
+  border: 1px solid white;
+  padding: 2em;
+  margin-top: 7em;
+}
+
+@media (min-width: 600px) {
+  body > header .wrapper .hero {
+    width: -webkit-min-content;
+    width: -moz-min-content;
+    width: min-content;
+  }
+  body > header .wrapper .hero span {
+    white-space: nowrap;
+  }
+}
+
+body > header .wrapper .hero h1 {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 2.5em;
+}
+
+@media (min-width: 600px) {
+  body > header .wrapper .hero h1 {
+    font-size: 3em;
+  }
+}
+
+@media (min-width: 992px) {
+  body > header .wrapper .hero h1 {
+    font-size: 4em;
+  }
+}
+
+@media (min-width: 1200px) {
+  body > header .wrapper .hero h1 {
+    font-size: 5em;
+  }
+}
+
+aside {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  background-color: black;
+  padding: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  -webkit-transition-property: scale opacity;
+  transition-property: scale opacity;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  opacity: 0;
+  z-index: 10;
+}
+
+aside header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+aside nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+aside nav ul {
+  list-style-type: none;
+}
+
+@media (orientation: landscape) {
+  aside nav ul {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+aside nav ul li a {
+  color: white;
+  font-size: 2em;
+  text-decoration: none;
+  text-transform: uppercase;
+  line-height: 1.5em;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  -webkit-transition-property: font-size;
+  transition-property: font-size;
+}
+
+@media (min-width: 768px) {
+  aside nav ul li a {
+    padding: 0.5em;
+    font-size: 1.7em;
+  }
+}
+
+aside nav ul li a:hover {
+  font-size: 2.2em;
+}
+
+aside.active {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  opacity: 1;
+}
+
+#interactive article {
+  margin: 4em 3em;
+}
+
+@media (min-width: 992px) {
+  #interactive article {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    position: relative;
+    margin: 7em;
+  }
+}
+
+#interactive article .image img {
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  #interactive article .image {
+    width: 50%;
+    max-width: 800px;
+  }
+}
+
+#interactive article .text-wrapper {
+  text-align: center;
+  padding: 1.5em 1em 3em;
+}
+
+@media (min-width: 992px) {
+  #interactive article .text-wrapper {
+    width: 50%;
+    position: absolute;
+    right: 5%;
+    bottom: 0;
+    background-color: white;
+    text-align: left;
+    padding: 3em 3em 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  #interactive article .text-wrapper {
+    padding: 4em 4em 0;
+    right: 10%;
+  }
+}
+
+#interactive article .text-wrapper h1 {
+  text-transform: uppercase;
+  font-size: 2em;
+  color: black;
+  font-weight: 300;
+}
+
+@media (min-width: 1200px) {
+  #interactive article .text-wrapper h1 {
+    font-size: 2.5em;
+  }
+}
+
+#interactive article .text-wrapper p {
+  font-family: "Alata", sans-serif;
+  color: #8c8c8c;
+  font-size: 0.9em;
+  padding-top: 2em;
+}
+/*# sourceMappingURL=styles.css.map */
