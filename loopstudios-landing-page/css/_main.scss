@@ -1,3 +1,9 @@
 body > main {
-  // padding: 2.5em;
+  margin: auto 2em;
+  @media (min-width: $breakpoint-lg) {
+    margin: auto 7em;
+  }
+  @media (min-width: $breakpoint-xl) {
+    margin: auto 10em;
+  }
 }

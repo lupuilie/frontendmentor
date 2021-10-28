@@ -11,7 +11,7 @@ body > header {
   .wrapper {
     padding: 2em 1.5em;
     @media (min-width: $breakpoint-lg) {
-      padding: 3em 7em;
+      padding: 3em 10em;
     }
     /* Navbar */
     .navbar {
@@ -46,7 +46,8 @@ body > header {
                   left: 50%;
                   transform: translateX(-50%);
                   opacity: 0;
-                  transition: all 0.3s ease;
+                  transition: 0.3s ease;
+                  transition-property: transform opacity;
                 }
               }
               a:hover:after {

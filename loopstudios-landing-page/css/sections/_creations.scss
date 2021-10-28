@@ -1,0 +1,94 @@
+#creations {
+  margin-top: 3em;
+  @media (min-width: $breakpoint-lg) {
+    margin-top: 7em;
+  }
+  header {
+    text-align: center;
+    @media (min-width: $breakpoint-lg) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0 1em;
+    }
+    h1 {
+      font-size: 2em;
+      font-weight: 300;
+      /* QUICK FIX: padding bottom at this heading in order to align properly with button */
+      padding-top: 6px;
+    }
+    a {
+      display: none;
+      @media (min-width: $breakpoint-lg) {
+        display: block;
+      }
+    }
+  }
+  footer {
+    display: flex;
+    justify-content: center;
+    margin: 1em auto;
+    @media (min-width: $breakpoint-lg) {
+      display: none;
+    }
+  }
+  /* 'SEE ALL' */
+  header > a,
+  footer > a {
+    font-family: "Alata", sans-serif;
+    padding: 0.5em 2em;
+    text-decoration: none;
+    color: $black;
+    border: 1px solid $black;
+    transition: 0.3s ease;
+    &:hover {
+      background-color: black;
+      color: $white;
+    }
+  }
+  /* GRID */
+  .creations-list {
+    margin-top: 2em;
+    display: grid;
+    grid-gap: 2em;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+
+    @media (min-width: $breakpoint-lg) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (min-width: $breakpoint-xl) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    article {
+      position: relative;
+      img {
+        width: 100%;
+      }
+      h2 {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 0.5em;
+        text-align: left;
+        color: $white;
+        font-weight: 300;
+        font-size: 1.4em;
+        @media (min-width: $breakpoint-lg) {
+          padding: 1em;
+        }
+        span {
+          display: block;
+        }
+      }
+    }
+    article:hover img {
+      opacity: 0.3;
+      cursor: pointer;
+    }
+    article:hover h2 {
+      color: $black;
+    }
+  }
+}

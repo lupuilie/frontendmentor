@@ -1,0 +1,78 @@
+body > footer {
+  margin-top: 5em;
+  background: $black;
+  color: $white;
+  text-align: center;
+  padding: 2em;
+  @media (min-width: $breakpoint-lg) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2em 7em;
+    .left {
+      text-align: left;
+    }
+    nav ul {
+      display: flex;
+      a {
+        padding-right: 0.5em;
+      }
+    }
+  }
+  @media (min-width: $breakpoint-xl) {
+    padding: 2em 10em;
+  }
+  nav {
+    margin: 1.5em 0;
+    ul {
+      list-style-type: none;
+      li {
+        display: block;
+      }
+    }
+  }
+  nav ul li a,
+  .contact ul li a {
+    padding: 0.7em 0;
+    margin-left: 1em;
+    display: inline-block;
+    text-decoration: none;
+    color: $white;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 1.5em;
+      height: 2px;
+      background: $white;
+      bottom: 0.5em;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: 0.3s ease;
+      transition-property: transform opacity;
+    }
+  }
+  nav ul li a:hover:after,
+  .contact ul li a:hover:after {
+    content: "";
+    opacity: 1;
+    bottom: 0;
+  }
+
+  p {
+    color: $gray;
+    margin-top: 0.5em;
+  }
+
+  .contact {
+    ul {
+      list-style-type: none;
+      li {
+        a {
+          margin-left: 0.5em;
+        }
+      }
+    }
+  }
+}
