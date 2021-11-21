@@ -1,0 +1,53 @@
+$spacing-sizes: (
+  0: 0rem,
+  1: 0.5rem,
+  2: 1rem,
+  3: 1.5rem,
+  4: 2rem,
+  5: 3rem,
+  6: 4rem,
+);
+
+$spacing-directions: (
+  "t": "top",
+  "b": "bottom",
+  "l": "left",
+  "r": "right",
+);
+
+@each $space, $value in $spacing-sizes {
+  // .m0, .m1, ...
+  .m-#{$space} {
+    margin: #{$value};
+  }
+  .my-#{$space} {
+    margin-top: #{$value};
+    margin-bottom: #{$value};
+  }
+  .mx-#{$space} {
+    margin-left: #{$value};
+    margin-right: #{$value};
+  }
+
+  // .p0, .p1, ...
+  .p-#{$space} {
+    padding: #{$value};
+  }
+  .py-#{$space} {
+    padding: #{$value} 0;
+  }
+  .px-#{$space} {
+    padding: 0 #{$value};
+  }
+
+  @each $direction-shorthand, $direction in $spacing-directions {
+    // .mt-0, .mb-0 ...
+    .m#{$direction-shorthand}-#{$space} {
+      margin-#{$direction}: #{$value};
+    }
+    // .pt-0, .pb-0 ...
+    .p#{$direction-shorthand}-#{$space} {
+      padding-#{$direction}: #{$value};
+    }
+  }
+}

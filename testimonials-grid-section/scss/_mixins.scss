@@ -1,0 +1,14 @@
+@mixin article-colors($color) {
+  .name {
+    color: $color;
+  }
+  .graduate-status {
+    color: rgba($color, 0.5);
+  }
+  .title {
+    color: $color;
+  }
+  .review {
+    color: rgba($color, 0.6);
+  }
+}
