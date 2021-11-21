@@ -16,6 +16,6 @@ body {
   @media #{$bp-1000-up} {
     display: flex;
     justify-content: center;
-    // align-items: center;
+    align-items: center;
   }
 }
