@@ -22,6 +22,9 @@ body {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 
@@ -496,7 +499,7 @@ body {
 
 .grid-articles article.bg-violet {
   background-color: #7541c8;
-  background-image: url("/images/bg-pattern-quotation.svg");
+  background-image: url("../../images/bg-pattern-quotation.svg");
   background-repeat: no-repeat;
   background-position: top right 10%;
 }
