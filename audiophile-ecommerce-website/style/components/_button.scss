@@ -1,16 +1,50 @@
 //Button
-.btn {
-  display: block;
-  color: $red;
-  border-color: transparent;
+%btn {
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  outline: none;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  transition: 0.3s ease;
+  transition-property: background-color, color;
+}
 
-  &:disabled,
-  &.disabled {
-    pointer-events: none;
+.btn-primary {
+  @extend %btn;
+
+  background-color: $clr-orange;
+  color: white;
+  &:hover,
+  &:focus {
+    background-color: $clr-light-orange;
   }
 }
 
-//Alternate Button
-.btn.alt {
-  color: $blue;
+.btn-outline {
+  @extend %btn;
+  background-color: $white;
+  color: $black;
+  border: 1px solid $black;
+  &:hover,
+  &:focus {
+    background-color: $black;
+    color: $white;
+  }
+}
+
+.link {
+  color: $clr-black-50;
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  &::after {
+    content: url("../../assets/shared/desktop/icon-arrow-right.svg");
+    padding-left: 13px;
+  }
+
+  &:hover {
+    color: $clr-orange;
+  }
 }

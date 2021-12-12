@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend Mentor | Audiophile e-commerce website</title>
+
+    <link
+      rel="shortcut icon"
+      href="./assets/favicon-32x32.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./css/styles.min.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Heading</h1>
+      <h2>Heading</h2>
+      <h3>Heading</h3>
+      <h4>Heading</h4>
+      <h5>Heading</h5>
+      <h6>Heading</h6>
+
+      <div>
+        <button class="btn-primary">see product</button>
+        <button class="btn-outline">see product</button>
+      </div>
+      <div>
+        <a href="#" class="link">Shop</a>
+      </div>
+      <div>
+        <form action="POST">
+          <div class="input-group">
+            <label for="name-input">Name</label>
+            <input
+              type="text"
+              name="name-input"
+              id="name-input"
+              placeholder="Insert your name"
+            />
+          </div>
+          <div class="input-group error">
+            <label for="name-input"
+              ><span>Name</span><span class="error">Wrong format</span></label
+            >
+            <input
+              type="text"
+              name="name-input"
+              id="name-input"
+              placeholder="Insert your name"
+            />
+          </div>
+          <!-- Radio buttons -->
+          <div class="input-group radio">
+            <label>
+              <input type="radio" name="payment" />
+              <span>e-money</span>
+            </label>
+          </div>
+          <div class="input-group radio active">
+            <label>
+              <input type="radio" name="payment" />
+              <span>Cash on Delivery</span>
+            </label>
+          </div>
+
+          <div class="input-group qty">
+            <button type="button">-</button>
+            <input type="text" value="1" />
+            <button type="button">+</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

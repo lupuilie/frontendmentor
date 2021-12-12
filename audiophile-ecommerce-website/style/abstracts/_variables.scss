@@ -1,6 +1,21 @@
 //Variables
 
+$default-ff: "Manrope", sans-serif;
+
 //Colors
-$red: #ef4b46;
-$blue: dodgerblue;
-$yellow: rgba(239, 181, 67, 1);
+$white: rgb(255, 255, 255);
+$black: rgb(0, 0, 0);
+
+$clr-black-25: rgba($black, 0.25);
+$clr-black-40: rgba($black, 0.4);
+$clr-black-50: rgba($black, 0.5);
+$clr-dark: #101010;
+
+$clr-gray: #f1f1f1;
+$clr-light-gray: #fafafa;
+$clr-gray-100: #cfcfcf;
+
+$clr-orange: #d87d4a;
+$clr-light-orange: #fbaf85;
+
+$clr-red: #cd2c2c;
