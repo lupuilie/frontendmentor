@@ -1,0 +1,15 @@
+@use "../abstracts" as *;
+@use "../base/typography";
+
+.link {
+  @extend .sub-title;
+  color: $clr-black-50;
+  &::after {
+    content: url("../../images/shared/icons/icon-arrow-right.svg");
+    padding-left: 8px;
+  }
+
+  &:hover {
+    color: $clr-orange;
+  }
+}

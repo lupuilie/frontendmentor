@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap");
 body {
   font-family: "Manrope", sans-serif;
 }
@@ -9,6 +9,19 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+img {
+  display: inline-block;
+  max-width: 100%;
+}
+
+a {
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.5);
+}
+a:hover {
+  color: rgba(0, 0, 0, 0.75);
 }
 
 h1,
@@ -76,11 +89,13 @@ h6,
   letter-spacing: 10px;
 }
 
-.sub-title {
+.sub-title, .link {
   font-weight: 700;
   font-size: 13px;
   line-height: 25px;
   letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 body {
@@ -88,14 +103,37 @@ body {
   line-height: 25px;
 }
 
+.container {
+  width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 85vw;
+  }
+}
+@media (min-width: 1000px) {
+  .container {
+    width: 80vw;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1100px;
+  }
+}
+
 .btn-outline, .btn-primary {
+  display: inline-block;
   font-weight: 700;
   font-size: 13px;
   text-transform: uppercase;
   border: 1px solid transparent;
   outline: none;
   cursor: pointer;
-  padding: 1rem 2rem;
+  padding: 0.5rem 2rem;
+  text-decoration: none;
   transition: 0.3s ease;
   transition-property: background-color, color;
 }
@@ -116,20 +154,6 @@ body {
 .btn-outline:hover, .btn-outline:focus {
   background-color: black;
   color: white;
-}
-
-.link {
-  color: rgba(0, 0, 0, 0.5);
-  text-decoration: none;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-.link::after {
-  content: url("../../assets/shared/desktop/icon-arrow-right.svg");
-  padding-left: 13px;
-}
-.link:hover {
-  color: #d87d4a;
 }
 
 .input-group {
@@ -236,8 +260,108 @@ body {
   color: #d87d4a;
 }
 
-.container {
-  width: 90vw;
-  margin-left: auto;
-  margin-right: auto;
+.link {
+  color: rgba(0, 0, 0, 0.5);
+}
+.link::after {
+  content: url("../../images/shared/icons/icon-arrow-right.svg");
+  padding-left: 8px;
+}
+.link:hover {
+  color: #d87d4a;
+}
+
+.hero {
+  background-color: #191919;
+  background-image: url("../../images/home/mobile/image-header.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: white;
+  /* hero-content */
+}
+.hero header {
+  border-bottom: 1px solid rgba(207, 207, 207, 0.15);
+  background-color: #191919;
+}
+.hero header > * {
+  line-height: 1;
+}
+.hero header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 0;
+}
+.hero .menu-toggler {
+  margin-right: 2rem;
+}
+.hero .desktop-menu {
+  display: none;
+  list-style-type: none;
+}
+.hero .desktop-menu a {
+  padding: 0 10px;
+  color: white;
+  transition: color 0.2s ease;
+}
+.hero .desktop-menu a:hover {
+  color: #d87d4a;
+}
+.hero .hero-content-wrapper {
+  padding: 6rem 0;
+}
+.hero .hero-content {
+  text-align: center;
+  max-width: 35ch;
+  margin: 0 auto;
+}
+.hero .hero-content > * {
+  margin-bottom: 1.2rem;
+}
+.hero .hero-content .overline {
+  color: rgba(255, 255, 255, 0.5);
+}
+.hero .hero-content p {
+  color: rgba(255, 255, 255, 0.75);
+}
+@media (min-width: 400px) {
+  .hero {
+    background-image: url("../../images/home/tablet/image-header.jpg");
+  }
+}
+@media (min-width: 600px) {
+  .hero {
+    background-size: contain;
+  }
+  .hero .hero-content {
+    max-width: 40ch;
+  }
+  .hero .logo {
+    margin-right: auto;
+  }
+  .hero .mobile-menu .menu {
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+@media (min-width: 900px) {
+  .hero {
+    background-image: url("../../images/home/desktop/image-hero.jpg");
+    background-position: center;
+  }
+  .hero .hero-content {
+    text-align: left;
+    margin: 0;
+  }
+  .hero .desktop-menu {
+    display: flex;
+    margin-right: auto;
+  }
+  .hero .menu-toggler {
+    display: none;
+  }
+  .hero .mobile-menu {
+    display: none;
+  }
 }

@@ -6,10 +6,14 @@ $default-ff: "Manrope", sans-serif;
 $white: rgb(255, 255, 255);
 $black: rgb(0, 0, 0);
 
+$clr-white-50: rgba($white, 0.5);
+$clr-white-75: rgba($white, 0.75);
+
 $clr-black-25: rgba($black, 0.25);
 $clr-black-40: rgba($black, 0.4);
 $clr-black-50: rgba($black, 0.5);
-$clr-dark: #101010;
+$clr-black-75: rgba($black, 0.75);
+$clr-dark: #121212;
 
 $clr-gray: #f1f1f1;
 $clr-light-gray: #fafafa;

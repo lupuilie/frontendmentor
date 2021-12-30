@@ -1,12 +1,16 @@
+@use "../abstracts" as *;
+
 //Button
 %btn {
+  display: inline-block;
   font-weight: 700;
   font-size: 13px;
   text-transform: uppercase;
   border: 1px solid transparent;
   outline: none;
   cursor: pointer;
-  padding: 1rem 2rem;
+  padding: 0.5rem 2rem;
+  text-decoration: none;
   transition: 0.3s ease;
   transition-property: background-color, color;
 }
@@ -31,20 +35,5 @@
   &:focus {
     background-color: $black;
     color: $white;
-  }
-}
-
-.link {
-  color: $clr-black-50;
-  text-decoration: none;
-  font-weight: 700;
-  text-transform: uppercase;
-  &::after {
-    content: url("../../assets/shared/desktop/icon-arrow-right.svg");
-    padding-left: 13px;
-  }
-
-  &:hover {
-    color: $clr-orange;
   }
 }
